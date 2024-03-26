@@ -10,9 +10,9 @@ public class ConnectionFactory {
 			 */
 			Class.forName("com.mysql.jdbc.Driver");
 			// estabelece a conexao e retorna uma conexao
-			String login = "root";
-			String senha = "root";
-			String url = "jdbc:mysql://localhost:3306/academico";
+			String login = "";
+			String senha = "";
+			String url = "jdbc:mysql://localhost:3306/toylablimited";
 			return DriverManager.getConnection(url, login, senha);
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
