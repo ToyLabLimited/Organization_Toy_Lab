@@ -12,7 +12,7 @@ public class Toys {
 	private String brand ;
 	
 	
-	private Toys () {
+	public Toys () {
 	}
 	public Toys(Integer code, String name, String image, String description, Double value, String details,
 			Category category, String brand) {
