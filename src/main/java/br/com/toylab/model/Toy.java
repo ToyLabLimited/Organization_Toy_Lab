@@ -1,6 +1,6 @@
 package br.com.toylab.model;
 
-public class Toys {
+public class Toy {
 	
 	private Integer code;
 	private String name;
@@ -8,14 +8,14 @@ public class Toys {
 	private String description;
 	private Double value ; 
 	private String details ;
-	private Category category ;
+	private String category ;
 	private String brand ;
 	
 	
-	private Toys () {
+	public Toy () {
 	}
-	public Toys(Integer code, String name, String image, String description, Double value, String details,
-			Category category, String brand) {
+	public Toy(Integer code, String name, String image, String description, Double value, String details,
+			String category, String brand) {
 		super();
 		this.code = code;
 		this.name = name;
@@ -88,12 +88,12 @@ public class Toys {
 	}
 
 
-	public Category getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
 
-	public void setCategory(Category category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
