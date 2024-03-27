@@ -6,14 +6,14 @@ public class Category {
  
 	private Integer id ;
 	private String name;
-	private List<Toys> toyList;
+	private List<Toy> toyList;
    
 
 public Category () {
 	
 }
 
-public Category(Integer id, String name, List<Toys> toyList) {
+public Category(Integer id, String name, List<Toy> toyList) {
 	super();
 	this.id = id;
 	this.name = name;
@@ -39,11 +39,11 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-public List<Toys> getToyList() {
+public List<Toy> getToyList() {
 	return toyList;
 }
 
-public void setToyList(List<Toys> toyList) {
+public void setToyList(List<Toy> toyList) {
 	this.toyList = toyList;
 }
 

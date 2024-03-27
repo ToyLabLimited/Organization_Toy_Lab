@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.toylab.model.Toys;
+import br.com.toylab.model.Toy;
 import br.com.toylab.util.ConnectionFactory;
 
 public class ToyDAO {
@@ -18,7 +18,7 @@ public class ToyDAO {
 
 	
 	// classe JavaBean
-	private Toys toy;
+	private Toy toy;
 
 	public ToyDAO() throws Exception {
 		// call the class ConnectionFactory and establishes a connection
@@ -30,21 +30,20 @@ public class ToyDAO {
 	}
 
 	// Create a new Toy
-	public void create(Toys toy) throws Exception {
+	public void create(Toy toy) throws Exception {
 		if (toy == null)
 			throw new Exception("O valor passado nao pode ser nulo");
 		try {
-			String SQL = "INSERT INTO brinquedos (codigo_brinquedo, descricao, categoria, marca, imagem, valor, detalhes, nome, )"
-					+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
+			String SQL = "INSERT INTO brinquedos (descricao, categoria, marca, imagem, valor, detalhes, nome)"
+					+ "values ( ?, ?, ?, ?, ?, ?, ?)";
 			ps = conn.prepareStatement(SQL);
-			ps.setInt(1, toy.getCode());
-			ps.setString(2, toy.getName());
-			ps.setString(3, toy.getImage());
-			ps.setString(4, toy.getDescription());
-			ps.setDouble(5, toy.getValue());
-			ps.setString(6, toy.getDetails());
-			ps.setObject(7, toy.getCategory());
-			ps.setString(8, toy.getBrand());
+			ps.setString(1, toy.getName());
+			ps.setString(2, toy.getImage());
+			ps.setString(3, toy.getDescription());
+			ps.setDouble(4, toy.getValue());
+			ps.setString(5, toy.getDetails());
+			ps.setObject(6, toy.getCategory());
+			ps.setString(7, toy.getBrand());
 			ps.executeUpdate();
 			//ps.setDate(5, new java.sql.Date(aluno.getDataNascimento().getTime()));
 		} catch (SQLException sqle) {
@@ -55,20 +54,19 @@ public class ToyDAO {
 	}
 
 	//Update a Toy by code
-	public void update(Toys toy) throws Exception {
+	public void update(Toy toy) throws Exception {
 		if (toy == null)
 			throw new Exception("O valor passado nao pode ser nulo");
 		try {
 			String SQL = "UPDATE brinquedos set descricao=?, set categoria=?, set marca=?, set imagem=?, set valor=?, set detalhes=?, set nome=? WHERE codigo_brinquedo=? ";
 			ps = conn.prepareStatement(SQL);
-			ps.setInt(1, toy.getCode());
-			ps.setString(2, toy.getName());
-			ps.setString(3, toy.getImage());
-			ps.setString(4, toy.getDescription());
-			ps.setDouble(5, toy.getValue());
-			ps.setString(6, toy.getDetails());
-			ps.setObject(7, toy.getCategory());
-			ps.setString(8, toy.getBrand());
+			ps.setString(1, toy.getName());
+			ps.setString(2, toy.getImage());
+			ps.setString(3, toy.getDescription());
+			ps.setDouble(4, toy.getValue());
+			ps.setString(5, toy.getDetails());
+			ps.setObject(6, toy.getCategory());
+			ps.setString(7, toy.getBrand());
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao alterar dados " + sqle);
@@ -78,7 +76,7 @@ public class ToyDAO {
 	}
 
 	// Delete Toy By Code
-	public void delete(Toys toy) throws Exception {
+	public void delete(Toy toy) throws Exception {
 		if (toy == null)
 			throw new Exception("O valor passado nao pode ser nulo");
 		try {
@@ -94,7 +92,7 @@ public class ToyDAO {
 	}
 
 	// Find Toy by Code
-	public Toys findByCode(Toys toy) throws Exception {
+	public Toy findByCode(Toy toy) throws Exception {
 		try {
 			ps = conn.prepareStatement("SELECT * FROM brinquedos WHERE codigo_brinquedo=?");
 			ps.setInt(1, toy.getCode());
@@ -109,7 +107,7 @@ public class ToyDAO {
 				String details = rs.getString("detalhes");
 				String brand = rs.getString("marca");
 				
-				toy = new Toys(code, name, image, description, value, details, category, brand);
+				toy = new Toy(code, name, image, description, value, details, category, brand);
 			}
 			return toy; 
 		} catch (SQLException sqle) {
@@ -120,11 +118,11 @@ public class ToyDAO {
 	}
 	
 	//List All Toys
-	public List<Toys> findAll() throws Exception {
+	public List<Toy> findAll() throws Exception {
 		try {
 			ps = conn.prepareStatement("SELECT * FROM brinquedos");
 			ps.setInt(1, toy.getCode());
-			List<Toys> toyList = new ArrayList<Toys>();
+			List<Toy> toyList = new ArrayList<Toy>();
 			
 			while (rs.next()) {
 				Integer code = rs.getInt("codigo_brinquedo");
@@ -136,7 +134,7 @@ public class ToyDAO {
 				String details = rs.getString("detalhes");
 				String brand = rs.getString("marca");
 				
-			   toyList.add(new Toys(code, name, image, description, value, details, category, brand));
+			   toyList.add(new Toy(code, name, image, description, value, details, category, brand));
 			}
 			return toyList; 
 		} catch (SQLException sqle) {

@@ -1,6 +1,6 @@
 package br.com.toylab.model;
 
-public class Toys {
+public class Toy {
 	
 	private Integer code;
 	private String name;
@@ -12,9 +12,9 @@ public class Toys {
 	private String brand ;
 	
 	
-	private Toys () {
+	public Toy () {
 	}
-	public Toys(Integer code, String name, String image, String description, Double value, String details,
+	public Toy(Integer code, String name, String image, String description, Double value, String details,
 			String category, String brand) {
 		super();
 		this.code = code;

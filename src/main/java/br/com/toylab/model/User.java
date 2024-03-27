@@ -7,7 +7,7 @@ public class User {
 	private String password ;
 	private Enum type;
 	
-	private User () {
+	public User () {
 		
 		
 	}
