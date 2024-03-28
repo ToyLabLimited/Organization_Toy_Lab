@@ -59,7 +59,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #6F6F6F;
+  color: #e1dede;
   text-align: left;
   background-color: #fff;
 }
@@ -655,8 +655,8 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .col {
@@ -2364,20 +2364,20 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #212529;
-  background-color: #D19C97;
-  border-color: #D19C97;
+  color: black;
+  background-color: #F2BD1D;
+  border-color: #F2BD1D;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #c5837c;
-  border-color: #c17a74;
+  background-color: #ebb30c;
+  border-color: #ebb30c;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #c5837c;
+  background-color: #ebb30c;
   border-color: #c17a74;
   box-shadow: 0 0 0 0.2rem rgba(183, 138, 135, 0.5);
 }
@@ -6094,13 +6094,13 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #5079F2 !important;
+  background-color: #21A650 !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #BDE8F2 !important;
+  background-color: #5079F2 !important;
 }
 
 .bg-secondary {
@@ -6182,7 +6182,7 @@ button.bg-dark:focus {
 }
 
 .border {
-  border: 1px solid #EDF1FF !important;
+  border: 3px solid #EDF1FF !important;
 }
 
 .border-top {
@@ -9264,7 +9264,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #D19C97 !important;
+  color: #21A650 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -9476,7 +9476,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-  color: #D19C97;
+  color: #21A650;
 }
 
 @media (max-width: 991.98px) {
@@ -9487,7 +9487,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar-vertical.navbar-light .navbar-nav .nav-link {
   padding: 8px 30px;
-  border-bottom: 1px solid #EDF1FF;
+  border-bottom: 2px solid #EDF1FF;
 }
 
 #header-carousel img {
