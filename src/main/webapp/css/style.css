@@ -1079,8 +1079,7 @@ pre code {
     max-width: 25%;
   }
   .col-md-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
+    max-width: 80%;
   }
   .col-md-5 {
     flex: 0 0 41.66667%;
@@ -6100,7 +6099,7 @@ a.close.disabled {
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #5079F2 !important;
+  background-color: #21A650 !important;
 }
 
 .bg-secondary {
@@ -7587,7 +7586,7 @@ button.bg-dark:focus {
 
 .pt-5,
 .py-5 {
-  padding-top: 3rem !important;
+  padding-top: 1rem !important;
 }
 
 .pr-5,
