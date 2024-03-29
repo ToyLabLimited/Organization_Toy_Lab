@@ -9581,3 +9581,36 @@ a.text-dark:hover, a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+#centralizar{
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+      text-align: left;
+      vertical-align: middle;
+}
+.table td, .table th {
+  vertical-align: middle;
+}
+.table img {
+  display: block;
+}
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 30px;
+}
+#info {
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+}
+
+
