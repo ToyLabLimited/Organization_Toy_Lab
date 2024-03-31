@@ -1,6 +1,13 @@
 package br.com.toylab.model;
 
-public class Toy {
+import java.io.Serializable;
+
+public class Toy implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private Integer code;
 	private String name;
