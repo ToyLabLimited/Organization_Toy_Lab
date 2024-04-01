@@ -59,7 +59,6 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #e1dede;
   text-align: left;
   background-color: #fff;
 }
@@ -593,7 +592,6 @@ pre code {
 }
 
 .container,
-.container-fluid,
 .container-sm,
 .container-md,
 .container-lg,
@@ -603,6 +601,9 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+.container-fluid{
+  padding: 0;
 }
 
 @media (min-width: 576px) {
@@ -655,8 +656,8 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 50px;
-  padding-left: 50px;
+  padding-right: 70px;
+  padding-left: 70px;
 }
 
 .col {
@@ -7596,7 +7597,7 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 3rem !important;
+  padding-bottom: 0rem !important;
 }
 
 .pl-5,
