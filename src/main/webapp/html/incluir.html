@@ -5,9 +5,9 @@
 <title>Brinquedos - Include</title>
 </head>
 <body>
-	<form action="../ToyServlet" method="get">
+	<form action="../ToyServlet?cmd=incluir" method="post" enctype="multipart/form-data">
 		<table border="1">
-			<input type="hidden" name="cmd" value="incluir">
+			
 			<tr>
 				<th colspan="2"><h1>Student registration</h1></th>
 			</tr>
@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 				<td>Imagem:</td>
-				<td><input type="text" size="60" name="imagem" /></td>
+				<td><input type="file" size="60" name="imagem" multiple="false"/></td>
 			</tr>
 			<tr>
 				<td>Valor:</td>

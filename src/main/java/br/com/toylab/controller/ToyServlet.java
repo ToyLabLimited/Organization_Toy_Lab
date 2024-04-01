@@ -1,5 +1,6 @@
 package br.com.toylab.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,11 +8,13 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import br.com.toylab.dao.ToyDAO;
 import br.com.toylab.model.Toy;
@@ -19,6 +22,11 @@ import br.com.toylab.model.Toy;
 
 
 @WebServlet("/ToyServlet")
+@MultipartConfig(
+		  fileSizeThreshold = 1024 * 1024 * 1, // 1 MB
+		  maxFileSize = 1024 * 1024 * 10,      // 10 MB
+		  maxRequestSize = 1024 * 1024 * 100   // 100 MB
+		)
 public class ToyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -38,7 +46,17 @@ public class ToyServlet extends HttpServlet {
 				toy.setDescription(request.getParameter("descricao"));
 				toy.setCategory(request.getParameter("categoria"));
 				toy.setBrand(request.getParameter("marca"));
+				if(cmd.equals("incluir")) {
+				String uploadPath = getServletContext().getRealPath("") + File.separator + "ToyImg";
+				File dirUpload = new File(uploadPath);
+				if (!dirUpload.exists()) dirUpload.mkdir();
+				Part filePart = request.getPart("imagem");
+				
+				System.out.println(getServletContext().getRealPath("") );
+				
+				}else {
 				toy.setImage(request.getParameter("imagem"));
+				}
 				toy.setValue(Double.parseDouble(request.getParameter("valor")));
 				toy.setDetails(request.getParameter("detalhes"));
 				toy.setName(request.getParameter("nome"));
@@ -66,6 +84,7 @@ public class ToyServlet extends HttpServlet {
 				session.setAttribute("toy", toy);
 				rd = request.getRequestDispatcher("jsp/atualizarBrinquedo.jsp");
 			} else if (cmd.equalsIgnoreCase("atualizar")) {
+				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
 				dao.update(toy);
 				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
 			} else if (cmd.equalsIgnoreCase("con")) {
