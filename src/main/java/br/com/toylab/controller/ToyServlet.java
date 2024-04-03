@@ -47,12 +47,15 @@ public class ToyServlet extends HttpServlet {
 				toy.setCategory(request.getParameter("categoria"));
 				toy.setBrand(request.getParameter("marca"));
 				if(cmd.equals("incluir")) {
-				String uploadPath = getServletContext().getRealPath("") + File.separator + "ToyImg";
-				File dirUpload = new File(uploadPath);
-				if (!dirUpload.exists()) dirUpload.mkdir();
+				String uploadPath =  "ToyImg";
+	
+				File dirUpload = new File(getServletContext().getRealPath("")+uploadPath);
+				if (!dirUpload.exists()) { dirUpload.mkdir();}
 				Part filePart = request.getPart("imagem");
+				String fileName = filePart.getSubmittedFileName();
+				filePart.write(getServletContext().getRealPath("")+uploadPath+File.separator+fileName);
 				
-				System.out.println(getServletContext().getRealPath("") );
+				toy.setImage("../"+uploadPath+"/"+fileName);
 				
 				}else {
 				toy.setImage(request.getParameter("imagem"));
