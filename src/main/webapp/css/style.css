@@ -656,8 +656,8 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 70px;
-  padding-left: 70px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .col {
@@ -3029,7 +3029,7 @@ input[type="button"].btn-block {
   display: none;
   float: left;
   min-width: 10rem;
-  padding: 0.5rem 0;
+  padding: 0.10rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
   color: #6F6F6F;
@@ -9595,23 +9595,15 @@ a.text-dark:hover, a.text-dark:focus {
 .table img {
   display: block;
 }
-.navbar-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .navbar-collapse {
   text-align: center;
 }
 
 .navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
   margin: 0 30px;
 }
-#info {
-  width: 100%; 
-  display: flex;
-  justify-content: center;
-}
-
 
