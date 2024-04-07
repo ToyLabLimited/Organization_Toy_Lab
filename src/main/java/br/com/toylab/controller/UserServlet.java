@@ -38,7 +38,7 @@ public class UserServlet extends HttpServlet {
 				user.setPassword(request.getParameter("senha"));
 				User adm = userDAO.Login(user);
 				if(adm.getId() != null) {
-					rd = request.getRequestDispatcher("./jsp/adminMostrarBrinquedos.jsp");
+					rd = request.getRequestDispatcher("ToyServlet?cmd=listarAdm");
 				}else {
 					rd = request.getRequestDispatcher("index.html");
 				}
