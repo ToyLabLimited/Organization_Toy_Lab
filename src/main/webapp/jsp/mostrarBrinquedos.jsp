@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
@@ -46,8 +46,8 @@
                 <div class="collapse navbar-collapse justify-content-between" style="margin-left: 180px;" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="index.html" class="nav-item nav-link" style="padding: 20px;">Home</a>
-                        <a href="catalogo.html" class="nav-item nav-link active" style="padding: 20px;">Cat�logo</a>
-                        <a href="login.html" class="nav-item nav-link" style="padding: 20px;">Administra��o</a>
+                        <a href="catalogo.html" class="nav-item nav-link active" style="padding: 20px;">Catálogo</a>
+                        <a href="login.html" class="nav-item nav-link" style="padding: 20px;">Administração</a>
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pedidos</a>
                             <div class="dropdown-menu rounded-0 m-0">
