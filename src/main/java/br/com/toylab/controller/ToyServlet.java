@@ -72,9 +72,7 @@ public class ToyServlet extends HttpServlet {
 		    				Part filePart = request.getPart("imagem");
 		    				String fileName = filePart.getSubmittedFileName();
 		    				filePart.write(getServletContext().getRealPath("")+uploadPath+File.separator+fileName);
-		    				
 		    				toy.setImage("../"+uploadPath+"/"+fileName);
-		    				
 		    				}else {
 		    				toy.setImage(request.getParameter("imagem"));
 		    				}
@@ -131,31 +129,13 @@ public class ToyServlet extends HttpServlet {
 		    		} catch (Exception e) {
 		    			System.out.println(e.getMessage());
 		    		}
-		        	
-		        	
-		        	
-		        	
-		        	
 		        }
-
-		        // Resto do seu código...
 		    } catch (Exception e) {
 		        System.out.println(e.getMessage());
-		        // Tratar exceção
 		    }
 		
 		
 	}	
-//		List<Toy> toys = null;
-//		try {
-//			ToyDAO dao = new ToyDAO();
-//			toys = dao.findAllByCategory(toyCategory);
-//			
-//		}catch(Exception e) {
-//			
-//		}
-//	}
-//	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
