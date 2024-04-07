@@ -121,6 +121,7 @@ public class ToyServlet extends HttpServlet {
 		    				session.setAttribute("toy", toy);
 		    				rd = request.getRequestDispatcher("jsp/excluirBrinquedo.jsp");
 		    			} else if (cmd.equalsIgnoreCase("excluir")) {
+		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
 		    				dao.delete(toy);
 		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
 		    			}

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
@@ -44,8 +44,8 @@
                 <div class="collapse navbar-collapse justify-content-between" style="margin-left: 180px;" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="index.html" class="nav-item nav-link" style="padding: 20px;">Home</a>
-                        <a href="catalogo.html" class="nav-item nav-link active" style="padding: 20px;">Cat·logo</a>
-                        <a href="login.html" class="nav-item nav-link" style="padding: 20px;">AdministraÁ„o</a>
+                        <a href="catalogo.html" class="nav-item nav-link active" style="padding: 20px;">Cat√°logo</a>
+                        <a href="login.html" class="nav-item nav-link" style="padding: 20px;">Administra√ß√£o</a>
                         <a href="equipe.html" class="nav-item nav-link" style="padding: 20px;">Equipe</a>
                     </div>
                 
@@ -88,7 +88,7 @@
                             <td class="align-middle"><%=a.getValue()%></td>
                             <td class="align-middle">
                             <a href="ToyServlet?cmd=atu&codigo_brinquedo=<%= a.getCode() %> "class="btn btn-sm text-dark p-0"><i class="fas fa-edit text-primary mr-1"></i>Editar</a> -
-                            <a href="ToyServlet?cmd=exc&codigo_brinquedo=<%= a.getCode() %>" class="btn btn-sm text-dark p-0"><i class="fas fa-trash text-danger mr-1"></i>Excluir</a>  
+                            <a type="button" class=" excbtn" data-toggle="modal" data-target="#Modal" value=<%= a.getCode() %> href="ToyServlet?cmd=excluir&codigo_brinquedo=<%= a.getCode() %>" class="btn btn-sm text-dark p-0"><i class="fas fa-trash text-danger mr-1"></i>Excluir</a>  
                             </td>
                         </tr>
            
@@ -97,7 +97,28 @@
 }
 %>
 
-		
+	<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tela de Confirma√ß√£o</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <a type="button" class="btn btn-primary modal-exc">Excluir</a>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
