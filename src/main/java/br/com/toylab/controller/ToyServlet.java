@@ -66,15 +66,12 @@ public class ToyServlet extends HttpServlet {
 		    				toy.setBrand(request.getParameter("marca"));
 		    				if(cmd.equals("incluir")) {
 		    				String uploadPath =  "ToyImg";
-		    	
 		    				File dirUpload = new File(getServletContext().getRealPath("")+uploadPath);
 		    				if (!dirUpload.exists()) { dirUpload.mkdir();}
 		    				Part filePart = request.getPart("imagem");
 		    				String fileName = filePart.getSubmittedFileName();
 		    				filePart.write(getServletContext().getRealPath("")+uploadPath+File.separator+fileName);
-		    				
-		    				toy.setImage("../"+uploadPath+"/"+fileName);
-		    				
+		    				toy.setImage("./"+uploadPath+"/"+fileName);
 		    				}else {
 		    				toy.setImage(request.getParameter("imagem"));
 		    				}
@@ -113,16 +110,14 @@ public class ToyServlet extends HttpServlet {
 		    				dao.update(toy);
 		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listarAdmin");
 		    			} else if (cmd.equalsIgnoreCase("con")) {
+		    				int toyCode = Integer.parseInt(request.getParameter("id"));
+		    				toy.setCode(toyCode);
 		    				toy = dao.findByCode(toy);
 		    				HttpSession session = request.getSession(true);
 		    				session.setAttribute("toy", toy);
-		    				rd = request.getRequestDispatcher("jsp/consultarBrinquedo.jsp");	
-		    			} else if (cmd.equalsIgnoreCase("exc")) {
-		    				toy = dao.findByCode(toy);
-		    				HttpSession session = request.getSession(true);
-		    				session.setAttribute("toy", toy);
-		    				rd = request.getRequestDispatcher("jsp/excluirBrinquedo.jsp");
-		    			} else if (cmd.equalsIgnoreCase("excluir")) {
+		    				rd = request.getRequestDispatcher("jsp/detail.jsp");	
+		    			}  else if (cmd.equalsIgnoreCase("excluir")) {
+		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
 		    				dao.delete(toy);
 		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
 		    			}
@@ -130,31 +125,13 @@ public class ToyServlet extends HttpServlet {
 		    		} catch (Exception e) {
 		    			System.out.println(e.getMessage());
 		    		}
-		        	
-		        	
-		        	
-		        	
-		        	
 		        }
-
-		        // Resto do seu código...
 		    } catch (Exception e) {
 		        System.out.println(e.getMessage());
-		        // Tratar exceção
 		    }
 		
 		
 	}	
-//		List<Toy> toys = null;
-//		try {
-//			ToyDAO dao = new ToyDAO();
-//			toys = dao.findAllByCategory(toyCategory);
-//			
-//		}catch(Exception e) {
-//			
-//		}
-//	}
-//	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

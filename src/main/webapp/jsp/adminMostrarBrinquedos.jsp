@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
@@ -45,16 +45,9 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" style="margin-left: 180px;" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active" style="padding: 20px;">Home</a>
-                        <a href="catalogo.html" class="nav-item nav-link" style="padding: 20px;">Catálogo</a>
-                        <a href="login.html" class="nav-item nav-link" style="padding: 20px;">Administração</a>
-                        <!-- <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pedidos</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="cart.html" class="dropdown-item">Meu carrinho</a>
-                                <a href="checkout.html" class="dropdown-item">Finalizar</a>
-                            </div>
-                        </div> -->
+                        <a href="index.html" class="nav-item nav-link" style="padding: 20px;">Home</a>
+                        <a href="catalogo.html" class="nav-item nav-link active" style="padding: 20px;">CatÃ¡logo</a>
+                        <a href="login.html" class="nav-item nav-link" style="padding: 20px;">AdministraÃ§Ã£o</a>
                         <a href="equipe.html" class="nav-item nav-link" style="padding: 20px;">Equipe</a>
                     </div>
                     <!-- <div class="navbar-nav ml-auto py-0">
@@ -108,7 +101,7 @@
 	                        <td class="align-middle"><%=a.getValue()%></td>
 	                        <td class="align-middle">
 	                        	<a href="ToyServlet?cmd=atu&codigo_brinquedo=<%= a.getCode() %> "class="btn btn-sm text-dark p-0"><i class="fas fa-edit text-primary mr-1"></i>Editar</a> -
-	                            <a href="ToyServlet?cmd=exc&codigo_brinquedo=<%= a.getCode() %>" class="btn btn-sm text-dark p-0"><i class="fas fa-trash text-danger mr-1"></i>Excluir</a>  
+	                            <a type="button" class=" excbtn" data-toggle="modal" data-target="#Modal" value=<%= a.getCode() %> href="ToyServlet?cmd=excluir&codigo_brinquedo=<%= a.getCode() %>" class="btn btn-sm text-dark p-0"><i class="fas fa-trash text-danger mr-1"></i>Excluir</a>    
 	                        </td>
 	          			</tr>
 	          			<%
@@ -132,7 +125,7 @@
                 <a href="" class="text-decoration-none">
                     <img src="img/iconToyLab.png" alt="" style="width: 120px;">      
                 </a> 
-                <p><br>Explore a magia na ToyLab - onde a diversão ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imaginação. Junte-se a nós para criar memórias inesquecíveis!</p>
+                <p><br>Explore a magia na ToyLab - onde a diversï¿½o ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imaginaï¿½ï¿½o. Junte-se a nï¿½s para criar memï¿½rias inesquecï¿½veis!</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>toylab@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+55 99 99999-9999</p>
             </div>
@@ -142,10 +135,10 @@
                         
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Links rápidos</h5>
+                        <h5 class="font-weight-bold text-dark mb-4">Links rï¿½pidos</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administração</a>
+                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administraï¿½ï¿½o</a>
                             <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Termos</a>
                             <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Avisos</a>
                             <a class="text-dark mb-2" href="equipe.html"><i class="fa fa-angle-right mr-2"></i>Equipe</a>
@@ -187,7 +180,28 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-		
+	<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tela de ConfirmaÃ§Ã£o</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <a type="button" class="btn btn-primary modal-exc">Excluir</a>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
