@@ -41,8 +41,8 @@
                 <div class="collapse navbar-collapse justify-content-between" style="margin-left: 180px;" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="index.html" class="nav-item nav-link" style="padding: 20px;">Home</a>
-                        <a href="catalogo.html" class="nav-item nav-link" style="padding: 20px;">Catï¿½logo</a>
-                        <a href="login.html" class="nav-item nav-link active" style="padding: 20px;">Administraï¿½ï¿½o</a>
+                        <a href="catalogo.html" class="nav-item nav-link" style="padding: 20px;">Catálogo</a>
+                        <a href="login.html" class="nav-item nav-link active" style="padding: 20px;">Administração</a>
                         <a href="equipe.html" class="nav-item nav-link" style="padding: 20px;">Equipe</a>
                     </div>
                 
@@ -70,7 +70,7 @@
             	<table class="table table-bordered text-center mb-0" style="font-weight: bold;" >
 	                   <tbody class="align-middle">
 	                   		<tr>
-	                            <td style="text-align: left;">Cï¿½digo</td>
+	                            <td style="text-align: left;">Código</td>
 					            <td> <input type="text" size="60" name="codigo_brinquedo"value="<%=toy.getCode()%>" readonly="readonly" style="width: 100%"/></td>
                         	</tr>
 	                        <tr>
@@ -78,7 +78,7 @@
 					            <td><input type="text" size="60" name="nome"value="<%=toy.getName()%>" style="width: 100%"/></td>
                         	</tr>
 	                        <tr>
-	                            <td style="text-align: left;">Descriï¿½ï¿½o</td>
+	                            <td style="text-align: left;">Descrição</td>
 					            <td><input type="text" size="60" name="descricao"value="<%=toy.getDescription()%>" style="width: 100%"/></td>
                         	</tr>
 	                         <tr>
@@ -99,7 +99,7 @@
                         	</tr>  
 	                        </tbody>
 					</table>
-					<input type="submit" value="Confirmar Atualizaï¿½ï¿½o" class="botaoincluir"/>
+					<input type="submit" value="Confirmar Atualização" class="botaoincluir"/>
 				</form>
             </div>
         </div>
@@ -123,7 +123,7 @@
                         
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Links rï¿½pidos</h5>
+                        <h5 class="font-weight-bold text-dark mb-4">Links rápidos</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administraï¿½ï¿½o</a>

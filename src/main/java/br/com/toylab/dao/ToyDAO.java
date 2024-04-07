@@ -56,16 +56,15 @@ public class ToyDAO {
 	    if (toy == null)
 	        throw new Exception("O valor passado nao pode ser nulo");
 	    try {
-	        String SQL = "UPDATE brinquedos set descricao=?, categoria=?, marca=?, imagem=?, valor=?, detalhes=?, nome=? WHERE codigo_brinquedo=?";
+	        String SQL = "UPDATE brinquedos set descricao=?, categoria=?, marca=?, valor=?, detalhes=?, nome=? WHERE codigo_brinquedo=?";
 	        ps = conn.prepareStatement(SQL);
 	        ps.setString(1, toy.getDescription());
 	        ps.setString(2, toy.getCategory());
 	        ps.setString(3, toy.getBrand());
-	        ps.setString(4, toy.getImage());
-	        ps.setDouble(5, toy.getValue());
-	        ps.setString(6, toy.getDetails());
-	        ps.setString(7, toy.getName());
-	        ps.setInt(8, toy.getCode());
+	        ps.setDouble(4, toy.getValue());
+	        ps.setString(5, toy.getDetails());
+	        ps.setString(6, toy.getName());
+	        ps.setInt(7, toy.getCode());
 	        ps.executeUpdate();
 	    } catch (SQLException sqle) {
 	        throw new Exception("Erro ao alterar dados " + sqle);
@@ -131,7 +130,7 @@ public class ToyDAO {
 				String category = rs.getString("categoria");
 				String brand = rs.getString("marca");
 				String image = rs.getString("imagem");
-				Double value = rs.getDouble("valor");
+				double value = rs.getDouble("valor");
 				String details = rs.getString("detalhes");
 				String name = rs.getString("nome");
 				toy = new Toy(code, name,  image, description, value, details, category, brand);

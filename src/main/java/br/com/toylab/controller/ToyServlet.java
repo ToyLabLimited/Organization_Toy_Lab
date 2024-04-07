@@ -73,7 +73,9 @@ public class ToyServlet extends HttpServlet {
 		    				filePart.write(getServletContext().getRealPath("")+uploadPath+File.separator+fileName);
 		    				toy.setImage("./"+uploadPath+"/"+fileName);
 		    				}else {
-		    				toy.setImage(request.getParameter("imagem"));
+
+			    				toy.setImage(request.getParameter("imagem"));
+			    			
 		    				}
 		    				toy.setValue(Double.parseDouble(request.getParameter("valor")));
 		    				toy.setDetails(request.getParameter("detalhes"));
@@ -108,7 +110,7 @@ public class ToyServlet extends HttpServlet {
 		    			} else if (cmd.equalsIgnoreCase("atualizar")) {
 		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
 		    				dao.update(toy);
-		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listarAdmin");
+		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listarAdm");
 		    			} else if (cmd.equalsIgnoreCase("con")) {
 		    				int toyCode = Integer.parseInt(request.getParameter("id"));
 		    				toy.setCode(toyCode);
