@@ -27,6 +27,7 @@ public class ToyDAO {
 			throw new Exception("erro: \n" + e.getMessage());
 		}
 	}
+	
 
 	// metodo de salvar
 	public void create(Toy toy) throws Exception {
@@ -88,6 +89,8 @@ public class ToyDAO {
 			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
+
+
 	
 	public List<Toy> findAll() throws Exception {
 		try {
@@ -115,6 +118,8 @@ public class ToyDAO {
 		}
 	}
 	
+
+	
 	public Toy findByCode(Toy toy) throws Exception {
 		try {
 			ps = conn.prepareStatement("SELECT * FROM brinquedos WHERE codigo_brinquedo=?");
@@ -139,6 +144,35 @@ public class ToyDAO {
 			ConnectionFactory.closeConnection(conn, ps, rs);
 		}
 	}
+	
+	public List<Toy> findAllByCategory(String toyCategory) throws Exception{
+		try {
+			ps = conn.prepareStatement("SELECT * FROM brinquedos WHERE categoria = ?");
+			ps.setString(1, toyCategory);
+			rs = ps.executeQuery();
+			List<Toy> list = new ArrayList<Toy>();
+			while (rs.next()) {
+				int code = rs.getInt("codigo_brinquedo");
+				String description = rs.getString("descricao");
+				String category = rs.getString("categoria");
+				String brand = rs.getString("marca");
+				String image = rs.getString("imagem");
+				Double value = rs.getDouble("valor");
+				String details = rs.getString("detalhes");
+				String name = rs.getString("nome");
+				list.add(new Toy(code, name,  image, description, value, details, category, brand));
+			
+			}
+			return list;
+		} catch (SQLException sqle) {
+			throw new Exception(sqle);
+		} finally {
+			ConnectionFactory.closeConnection(conn, ps, rs);
+		}
+	
+	}
 }
+
+
 
 

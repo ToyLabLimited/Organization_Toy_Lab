@@ -41,74 +41,116 @@ public class ToyServlet extends HttpServlet {
 			throws ServletException, IOException {
 		Toy toy = new Toy();
 		String cmd = request.getParameter("cmd");
-		try {
-			if (cmd.equals("incluir") || cmd.equals("atualizar")) {
-				toy.setDescription(request.getParameter("descricao"));
-				toy.setCategory(request.getParameter("categoria"));
-				toy.setBrand(request.getParameter("marca"));
-				if(cmd.equals("incluir")) {
-				String uploadPath =  "ToyImg";
-	
-				File dirUpload = new File(getServletContext().getRealPath("")+uploadPath);
-				if (!dirUpload.exists()) { dirUpload.mkdir();}
-				Part filePart = request.getPart("imagem");
-				String fileName = filePart.getSubmittedFileName();
-				filePart.write(getServletContext().getRealPath("")+uploadPath+File.separator+fileName);
-				
-				toy.setImage("../"+uploadPath+"/"+fileName);
-				
-				}else {
-				toy.setImage(request.getParameter("imagem"));
-				}
-				toy.setValue(Double.parseDouble(request.getParameter("valor")));
-				toy.setDetails(request.getParameter("detalhes"));
-				toy.setName(request.getParameter("nome"));
-			} else {
-				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
-			}
-		} catch (Exception e) {
-			// System.out.println("Erro na data");
-			System.out.println(e.getMessage());
-		}
-		try {
-			ToyDAO dao = new ToyDAO();
-			// Dispatcher - direciona para uma nova página
-			RequestDispatcher rd = null;
-			if (cmd.equalsIgnoreCase("incluir")) {
-				dao.create(toy);
-				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
-			} else if (cmd.equalsIgnoreCase("listar")) {
-				List<Toy> toyList = dao.findAll();
-				request.setAttribute("toyList", toyList);
-				rd = request.getRequestDispatcher("jsp/mostrarBrinquedos.jsp");		
-			}  else if (cmd.equalsIgnoreCase("atu")) {
-				toy = dao.findByCode(toy);
-				HttpSession session = request.getSession(true);
-				session.setAttribute("toy", toy);
-				rd = request.getRequestDispatcher("jsp/atualizarBrinquedo.jsp");
-			} else if (cmd.equalsIgnoreCase("atualizar")) {
-				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
-				dao.update(toy);
-				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
-			} else if (cmd.equalsIgnoreCase("con")) {
-				toy = dao.findByCode(toy);
-				HttpSession session = request.getSession(true);
-				session.setAttribute("toy", toy);
-				rd = request.getRequestDispatcher("jsp/consultarBrinquedo.jsp");	
-			} else if (cmd.equalsIgnoreCase("exc")) {
-				toy = dao.findByCode(toy);
-				HttpSession session = request.getSession(true);
-				session.setAttribute("toy", toy);
-				rd = request.getRequestDispatcher("jsp/excluirBrinquedo.jsp");
-			} else if (cmd.equalsIgnoreCase("excluir")) {
-				dao.delete(toy);
-				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
-			}
-			rd.forward(request, response);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
+		String toyCategory = request.getParameter("category");
+
+		    try {
+		        // Verificar se cmd é nulo ou vazio
+		        if (cmd == null || cmd.isEmpty()) {
+		            // Se cmd for nulo, tentar listar os brinquedos por categoria
+		            if (toyCategory != null && !toyCategory.isEmpty()) {
+		            	toy.setCategory(request.getParameter("categoria"));
+		                ToyDAO dao = new ToyDAO();
+		                List<Toy> toyList = dao.findAllByCategory(toyCategory);
+		                request.setAttribute("toyList", toyList );
+		                RequestDispatcher rd = request.getRequestDispatcher("jsp/mostrarBrinquedos.jsp");
+		                rd.forward(request, response);
+		            }
+		            
+		            return;
+		        }else {
+		        	
+		        	try {
+		    			if (cmd.equals("incluir") || cmd.equals("atualizar")) {
+		    				toy.setDescription(request.getParameter("descricao"));
+		    				toy.setCategory(request.getParameter("categoria"));
+		    				toy.setBrand(request.getParameter("marca"));
+		    				if(cmd.equals("incluir")) {
+		    				String uploadPath =  "ToyImg";
+		    	
+		    				File dirUpload = new File(getServletContext().getRealPath("")+uploadPath);
+		    				if (!dirUpload.exists()) { dirUpload.mkdir();}
+		    				Part filePart = request.getPart("imagem");
+		    				String fileName = filePart.getSubmittedFileName();
+		    				filePart.write(getServletContext().getRealPath("")+uploadPath+File.separator+fileName);
+		    				
+		    				toy.setImage("../"+uploadPath+"/"+fileName);
+		    				
+		    				}else {
+		    				toy.setImage(request.getParameter("imagem"));
+		    				}
+		    				toy.setValue(Double.parseDouble(request.getParameter("valor")));
+		    				toy.setDetails(request.getParameter("detalhes"));
+		    				toy.setName(request.getParameter("nome"));
+		    			} else {
+		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
+		    			}
+		    		} catch (Exception e) {
+		    			// System.out.println("Erro na data");
+		    			System.out.println(e.getMessage());
+		    		}
+		    		try {
+		    			ToyDAO dao = new ToyDAO();
+		    			// Dispatcher - direciona para uma nova página
+		    			RequestDispatcher rd = null;
+		    			if (cmd.equalsIgnoreCase("incluir")) {
+		    				dao.create(toy);
+		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
+		    			} else if (cmd.equalsIgnoreCase("listar")) {
+		    				List<Toy> toyList = dao.findAll();
+		    				request.setAttribute("toyList", toyList);
+		    				rd = request.getRequestDispatcher("jsp/mostrarBrinquedos.jsp");		
+		    			}  else if (cmd.equalsIgnoreCase("atu")) {
+		    				toy = dao.findByCode(toy);
+		    				HttpSession session = request.getSession(true);
+		    				session.setAttribute("toy", toy);
+		    				rd = request.getRequestDispatcher("jsp/atualizarBrinquedo.jsp");
+		    			} else if (cmd.equalsIgnoreCase("atualizar")) {
+		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
+		    				dao.update(toy);
+		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
+		    			} else if (cmd.equalsIgnoreCase("con")) {
+		    				toy = dao.findByCode(toy);
+		    				HttpSession session = request.getSession(true);
+		    				session.setAttribute("toy", toy);
+		    				rd = request.getRequestDispatcher("jsp/consultarBrinquedo.jsp");	
+		    			} else if (cmd.equalsIgnoreCase("exc")) {
+		    				toy = dao.findByCode(toy);
+		    				HttpSession session = request.getSession(true);
+		    				session.setAttribute("toy", toy);
+		    				rd = request.getRequestDispatcher("jsp/excluirBrinquedo.jsp");
+		    			} else if (cmd.equalsIgnoreCase("excluir")) {
+		    				dao.delete(toy);
+		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
+		    			}
+		    			rd.forward(request, response);
+		    		} catch (Exception e) {
+		    			System.out.println(e.getMessage());
+		    		}
+		        	
+		        	
+		        	
+		        	
+		        	
+		        }
+
+		        // Resto do seu código...
+		    } catch (Exception e) {
+		        System.out.println(e.getMessage());
+		        // Tratar exceção
+		    }
+		
+		
+	}	
+//		List<Toy> toys = null;
+//		try {
+//			ToyDAO dao = new ToyDAO();
+//			toys = dao.findAllByCategory(toyCategory);
+//			
+//		}catch(Exception e) {
+//			
+//		}
+//	}
+//	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
