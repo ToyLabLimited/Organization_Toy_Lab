@@ -110,16 +110,13 @@ public class ToyServlet extends HttpServlet {
 		    				dao.update(toy);
 		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listarAdmin");
 		    			} else if (cmd.equalsIgnoreCase("con")) {
+		    				int toyCode = Integer.parseInt(request.getParameter("id"));
+		    				toy.setCode(toyCode);
 		    				toy = dao.findByCode(toy);
 		    				HttpSession session = request.getSession(true);
 		    				session.setAttribute("toy", toy);
-		    				rd = request.getRequestDispatcher("jsp/consultarBrinquedo.jsp");	
-		    			} else if (cmd.equalsIgnoreCase("exc")) {
-		    				toy = dao.findByCode(toy);
-		    				HttpSession session = request.getSession(true);
-		    				session.setAttribute("toy", toy);
-		    				rd = request.getRequestDispatcher("jsp/excluirBrinquedo.jsp");
-		    			} else if (cmd.equalsIgnoreCase("excluir")) {
+		    				rd = request.getRequestDispatcher("jsp/detail.jsp");	
+		    			}  else if (cmd.equalsIgnoreCase("excluir")) {
 		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
 		    				dao.delete(toy);
 		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
