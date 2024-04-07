@@ -134,8 +134,8 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="detail.html" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Ver detalhes</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Carrinho</a>
+                    <a href="atualizarBrinquedo.jsp" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Editar</a>
+                    <a href="excluirBrinquedo.jsp" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Excluir</a>
                 </div>
             </div>
         </div>
