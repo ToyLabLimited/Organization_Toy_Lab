@@ -113,7 +113,7 @@
                 <a href="" class="text-decoration-none">
                     <img src="img/iconToyLab.png" alt="" style="width: 120px;">      
                 </a> 
-                <p><br>Explore a magia na ToyLab - onde a diversï¿½o ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imaginaï¿½ï¿½o. Junte-se a nï¿½s para criar memï¿½rias inesquecï¿½veis!</p>
+                <p><br>Explore a magia na ToyLab - onde a diversão ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imaginação. Junte-se a nós para criar memórias inesquecíveis!</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>toylab@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+55 99 99999-9999</p>
             </div>
@@ -126,7 +126,7 @@
                         <h5 class="font-weight-bold text-dark mb-4">Links rápidos</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administraï¿½ï¿½o</a>
+                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administração</a>
                             <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Termos</a>
                             <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Avisos</a>
                             <a class="text-dark mb-2" href="equipe.html"><i class="fa fa-angle-right mr-2"></i>Equipe</a>
