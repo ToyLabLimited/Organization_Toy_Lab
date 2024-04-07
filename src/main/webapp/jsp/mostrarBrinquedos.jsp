@@ -8,6 +8,7 @@
 <html>
 <head>
 <title>Lista de Brinquedos</title>
+   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 	<table width="60%" border="1">
@@ -41,7 +42,7 @@
 			<td><%=a.getBrand()%></td>
 			
 			<td>
-				<a class="exc" href="ToyServlet?cmd=exc&codigo_brinquedo=<%= a.getCode() %>"><img src="image/icons8-apagar-66.png" width="30px"></a>
+				<a type="button" class="btn btn-primary excbtn" data-toggle="modal" data-target="#Modal" href="ToyServlet?cmd=excluir&codigo_brinquedo=<%= a.getCode() %>"><img src="image/icons8-apagar-66.png" width="30px"></a>
 		 	    <a href="ToyServlet?cmd=atu&codigo_brinquedo=<%= a.getCode() %>"><img src="image/icons8-editar-50.png" width="30px"></a>
 		    </td>
 		</tr>
@@ -53,6 +54,27 @@
 			<th colspan="7"><a href="index.html">Página Principal</a></th>
 		</tr>
 	</table>
-	<script src="../js/modal.js"></script>
+	<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tela de Confirmação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Você tem certeza que deseja deletar esse registro?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <a type="button" class="btn btn-primary modal-exc">Excluir</a>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
