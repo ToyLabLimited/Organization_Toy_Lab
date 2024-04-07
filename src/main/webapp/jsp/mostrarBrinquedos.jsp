@@ -41,7 +41,7 @@
 			<td><%=a.getBrand()%></td>
 			
 			<td>
-				<a href="ToyServlet?cmd=exc&codigo_brinquedo=<%= a.getCode() %>"><img src="image/icons8-apagar-66.png" width="30px"></a>
+				<a class="exc" href="ToyServlet?cmd=exc&codigo_brinquedo=<%= a.getCode() %>"><img src="image/icons8-apagar-66.png" width="30px"></a>
 		 	    <a href="ToyServlet?cmd=atu&codigo_brinquedo=<%= a.getCode() %>"><img src="image/icons8-editar-50.png" width="30px"></a>
 		    </td>
 		</tr>
@@ -53,5 +53,6 @@
 			<th colspan="7"><a href="index.html">Página Principal</a></th>
 		</tr>
 	</table>
+	<script src="../js/modal.js"></script>
 </body>
 </html>

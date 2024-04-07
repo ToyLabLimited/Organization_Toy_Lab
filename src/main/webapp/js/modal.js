@@ -1,0 +1,1 @@
+const excbuttons = document.querySelectorAll("exc")
