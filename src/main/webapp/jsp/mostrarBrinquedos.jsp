@@ -18,7 +18,7 @@
 		<tr>
 			<th>Codigo</th>
 			<th>Name</th>
-			<th>Descrição</th>
+			<th>DescriÃ§Ã£o</th>
 			<th>Valor</th>
 			<th>Detalhes</th>
 			<th>Categoria</th>
@@ -50,7 +50,7 @@
 		
 		%>
 		<tr>
-			<th colspan="7"><a href="index.html">Página Principal</a></th>
+			<th colspan="7"><a href="index.html">Pï¿½gina Principal</a></th>
 		</tr>
 	</table>
 </body>
