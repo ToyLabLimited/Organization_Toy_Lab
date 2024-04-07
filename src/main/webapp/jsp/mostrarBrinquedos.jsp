@@ -25,7 +25,6 @@
 			<th>Marca</th>
 		</tr>
 		<%
-		SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
 				List<Toy> lista = new ArrayList<>();
 				lista = (ArrayList) request.getAttribute("toyList");
 			
