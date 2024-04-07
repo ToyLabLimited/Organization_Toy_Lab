@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
@@ -88,7 +88,7 @@
                             <td class="align-middle"><%=a.getValue()%></td>
                             <td class="align-middle">
                             <a href="ToyServlet?cmd=atu&codigo_brinquedo=<%= a.getCode() %> "class="btn btn-sm text-dark p-0"><i class="fas fa-edit text-primary mr-1"></i>Editar</a> -
-                            <a type="button" class="btn btn-primary excbtn" data-toggle="modal" data-target="#Modal" href="ToyServlet?cmd=exc&codigo_brinquedo=<%= a.getCode() %>" class="btn btn-sm text-dark p-0"><i class="fas fa-trash text-danger mr-1"></i>Excluir</a>  
+                            <a type="button" class=" excbtn" data-toggle="modal" data-target="#Modal" value=<%= a.getCode() %> href="ToyServlet?cmd=excluir&codigo_brinquedo=<%= a.getCode() %>" class="btn btn-sm text-dark p-0"><i class="fas fa-trash text-danger mr-1"></i>Excluir</a>  
                             </td>
                         </tr>
            
@@ -101,13 +101,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tela de Confirma��o</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tela de Confirmação</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Voc� tem certeza que deseja deletar esse registro?
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
