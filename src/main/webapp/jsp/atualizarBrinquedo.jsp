@@ -11,9 +11,6 @@
 	<h2>Atualizar brinquedo</h2>
 	<jsp:useBean id="toy" scope="session"
 		class="br.com.toylab.model.Toy" />
-	<%
-	SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
-	%>
 	<form action="ToyServlet?cmd=atualizar" method="post">
 		<table border="1">
 		
