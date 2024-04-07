@@ -99,6 +99,10 @@ public class ToyServlet extends HttpServlet {
 		    				List<Toy> toyList = dao.findAll();
 		    				request.setAttribute("toyList", toyList);
 		    				rd = request.getRequestDispatcher("jsp/mostrarBrinquedos.jsp");		
+		    			} else if (cmd.equalsIgnoreCase("listarAdm")) {
+		    				List<Toy> toyList = dao.findAll();
+		    				request.setAttribute("toyList", toyList);
+		    				rd = request.getRequestDispatcher("jsp/adminMostrarBrinquedos.jsp");		
 		    			}  else if (cmd.equalsIgnoreCase("atu")) {
 		    				toy = dao.findByCode(toy);
 		    				HttpSession session = request.getSession(true);
@@ -107,7 +111,7 @@ public class ToyServlet extends HttpServlet {
 		    			} else if (cmd.equalsIgnoreCase("atualizar")) {
 		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
 		    				dao.update(toy);
-		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
+		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listarAdmin");
 		    			} else if (cmd.equalsIgnoreCase("con")) {
 		    				toy = dao.findByCode(toy);
 		    				HttpSession session = request.getSession(true);
