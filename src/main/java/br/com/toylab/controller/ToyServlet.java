@@ -121,7 +121,7 @@ public class ToyServlet extends HttpServlet {
 		    			}  else if (cmd.equalsIgnoreCase("excluir")) {
 		    				toy.setCode(Integer.parseInt(request.getParameter("codigo_brinquedo")));
 		    				dao.delete(toy);
-		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listar");
+		    				rd = request.getRequestDispatcher("ToyServlet?cmd=listarAdm");
 		    			}
 		    			rd.forward(request, response);
 		    		} catch (Exception e) {

@@ -9586,8 +9586,8 @@ a.text-dark:hover, a.text-dark:focus {
     margin-left: auto;
     margin-right: auto;
     display: table;
-      text-align: left;
-      vertical-align: middle;
+    text-align: left;
+    vertical-align: middle;
 }
 .table td, .table th {
   vertical-align: middle;
@@ -9595,8 +9595,6 @@ a.text-dark:hover, a.text-dark:focus {
 .table img {
   display: block;
 }
-
-
 .navbar-collapse {
   text-align: center;
 }
@@ -9605,5 +9603,47 @@ a.text-dark:hover, a.text-dark:focus {
   display: flex;
   align-items: center;
   margin: 0 30px;
+}
+.botaoincluir {
+  display: inline-block;
+  padding: 6px 20px;
+  font-size: 16px;
+  width: 200px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  transition: background-color 0.3s;
+}
+.botaoincluir:hover {
+  background-color: #45a049; /* Cor de fundo ao passar o mouse */
+}
+.botaoincluir:active {
+  background-color: #36733d;
+  transform: translateY(1px); 
+}
+#arquivo {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#arquivo:hover {
+  background-color: #e9e9e9;
+}
+#tabelinha {
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#navbarCollapse {
+  text-align: center;
 }
 
