@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>TOYLAB - Loja de brinquedos</title>
+    <title>TOYLAB - Área administrativa</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -50,22 +50,8 @@
                         <a href="login.html" class="nav-item nav-link" style="padding: 20px;">Administração</a>
                         <a href="equipe.html" class="nav-item nav-link" style="padding: 20px;">Equipe</a>
                     </div>
-                    <!-- <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Login</a>
-                        <a href="" class="nav-item nav-link">Register</a>
-                    </div> -->
                 </div>
             </nav>
-            <!-- <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a href="" class="btn border">
-                    <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-            </div> -->
         </div>
     </div>
     <!-- Topbar End -->
@@ -73,7 +59,6 @@
 	<div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Painel Administrativo</span></h2>
     </div>
-
 
     <div class="container-fluid pt-5" id="">
         <div class="row px-xl-5">
@@ -125,7 +110,7 @@
                 <a href="" class="text-decoration-none">
                     <img src="img/iconToyLab.png" alt="" style="width: 120px;">      
                 </a> 
-                <p><br>Explore a magia na ToyLab - onde a divers�o ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imagina��o. Junte-se a n�s para criar mem�rias inesquec�veis!</p>
+                <p><br>Explore a magia na ToyLab - onde a diversão ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imaginação. Junte-se a nós para criar memórias inesquecíveis!</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>toylab@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+55 99 99999-9999</p>
             </div>
@@ -135,12 +120,10 @@
                         
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Links r�pidos</h5>
+                        <h5 class="font-weight-bold text-dark mb-4">Links rápidos</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administra��o</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Termos</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Avisos</a>
+                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administração</a>
                             <a class="text-dark mb-2" href="equipe.html"><i class="fa fa-angle-right mr-2"></i>Equipe</a>
                         </div>
                     </div>

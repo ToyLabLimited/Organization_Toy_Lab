@@ -1,4 +1,0 @@
-bg-primary - mudar a cor de categorias
-text-primary - mudar a cor dos icones (i)
-
-linha 9477 - muda hover do (a)
