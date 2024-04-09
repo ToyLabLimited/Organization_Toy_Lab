@@ -41,8 +41,8 @@
                 <div class="collapse navbar-collapse justify-content-between" style="margin-left: 180px;" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="index.html" class="nav-item nav-link" style="padding: 20px;">Home</a>
-                        <a href="catalogo.html" class="nav-item nav-link" style="padding: 20px;">CatÃ¡logo</a>
-                        <a href="login.html" class="nav-item nav-link active" style="padding: 20px;">AdministraÃ§Ã£o</a>
+                        <a href="catalogo.html" class="nav-item nav-link" style="padding: 20px;">Catálogo</a>
+                        <a href="login.html" class="nav-item nav-link active" style="padding: 20px;">Administração</a>
                         <a href="equipe.html" class="nav-item nav-link" style="padding: 20px;">Equipe</a>
                     </div>
                 
@@ -70,7 +70,7 @@
             	<table class="table table-bordered text-center mb-0" style="font-weight: bold;" >
 	                   <tbody class="align-middle">
 	                   		<tr>
-	                            <td style="text-align: left;">CÃ³digo</td>
+	                            <td style="text-align: left;">Código</td>
 					            <td> <input type="text" size="60" name="codigo_brinquedo"value="<%=toy.getCode()%>" readonly="readonly" style="width: 100%"/></td>
                         	</tr>
 	                        <tr>
@@ -78,7 +78,7 @@
 					            <td><input type="text" size="60" name="nome"value="<%=toy.getName()%>" style="width: 100%"/></td>
                         	</tr>
 	                        <tr>
-	                            <td style="text-align: left;">DescriÃ§Ã£o</td>
+	                            <td style="text-align: left;">Descrição</td>
 					            <td><input type="text" size="60" name="descricao"value="<%=toy.getDescription()%>" style="width: 100%"/></td>
                         	</tr>
 	                         <tr>
@@ -99,7 +99,8 @@
                         	</tr>  
 	                        </tbody>
 					</table>
-					<input type="submit" value="Confirmar AtualizaÃ§Ã£o" class="botaoincluir"/>
+					<br>
+					<input type="submit" class="botaoincluir" value="Confirmar Atualização" />
 				</form>
             </div>
         </div>
@@ -113,7 +114,7 @@
                 <a href="" class="text-decoration-none">
                     <img src="img/iconToyLab.png" alt="" style="width: 120px;">      
                 </a> 
-                <p><br>Explore a magia na ToyLab - onde a diversÃ£o ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imaginaÃ§Ã£o. Junte-se a nÃ³s para criar memÃ³rias inesquecÃ­veis!</p>
+                <p><br>Explore a magia na ToyLab - onde a diversão ganha vida! Encontre os melhores brinquedos para inspirar sorrisos e estimular a imaginação. Junte-se a nós para criar memórias inesquecíveis!</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>toylab@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+55 99 99999-9999</p>
             </div>
@@ -123,10 +124,10 @@
                         
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Links rÃ¡pidos</h5>
+                        <h5 class="font-weight-bold text-dark mb-4">Links rápidos</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>AdministraÃ§Ã£o</a>
+                            <a class="text-dark mb-2" href="login.html"><i class="fa fa-angle-right mr-2"></i>Administraçãoo</a>
                             <a class="text-dark mb-2" href="equipe.html"><i class="fa fa-angle-right mr-2"></i>Equipe</a>
                         </div>
                     </div>

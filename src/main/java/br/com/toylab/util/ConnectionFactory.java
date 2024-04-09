@@ -11,8 +11,8 @@ public class ConnectionFactory {
 			Class.forName("com.mysql.jdbc.Driver");
 			// estabelece a conexao e retorna uma conexao
 			String login = "root";
-			String senha = "Root123";
-			String url = "jdbc:mysql://localhost:3306/toylablimited";
+			String senha = "1234";
+			String url = "jdbc:mysql://localhost:3306/toylab";
 			return DriverManager.getConnection(url, login, senha);
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());

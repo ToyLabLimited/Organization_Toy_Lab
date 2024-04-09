@@ -82,7 +82,7 @@
                 <h3 class="font-weight-semi-bold"><%=toy.getName()%></h3>
              
                 <br>
-                <h3 class="font-weight-semi-bold mb-4">$<%=toy.getValue()%></h3>
+                <h3 class="font-weight-semi-bold mb-4">R$<%=toy.getValue()%></h3>
                 <p class="mb-4"><%=toy.getDescription()%></p>
                 <p class="mb-4">Detalhes: <%=toy.getDetails()%></p>
                 <p class="mb-4">Marca: <%=toy.getBrand()%></p>
